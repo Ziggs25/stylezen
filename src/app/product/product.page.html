@@ -1,0 +1,101 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="" class="custom-back-button"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Product Details</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="heart-outline" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!--Product Image-->
+  <div class="relative bg-gray-800">
+    <img src={{product.images[0]}} alt={{product.name}} class="h-[50vh] w-full object-cover" />
+    <div class="absolute bottom-4 right-4 bg-white bg-opacity-40 backdrop-blur-md rounded-full px-3 py-1 text-sm">
+      1 / {{product.images.length}}
+    </div>
+  </div>
+
+
+  <!--Product Description-->
+  <div class="p-4 space-y-4 mb-20 mt-1">
+    <div class="flex justify-between items-start">
+      <div>
+        <h2 class="text-xl font-semibold">{{product.name}}</h2>
+        <div class="flex items-baseline space-x-4">
+          <p class="text-2xl font-bold">PHP {{product.price}}</p>
+          <div class="flex items-center">
+            <ion-icon name="star" />
+            <span class="ml-1 text-sm text-gray-600">
+              {{product.rating}} ({{product.reviewCount}})
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-gray-600">{{product.description}}</p>
+
+    <!--{/* Size Selection */}-->
+    <div>
+      <h3 class="font-semibold mb-2">Size</h3>
+      <div class="flex flex-wrap gap-2">
+        <div *ngFor="let size of product.sizes" class="px-4 py-2 rounded-full border">{{size}}</div>
+        <!--{product.sizes.map((size) => (-->
+        <!--<button key={size} onClick={()=> setSelectedSize(size)}-->
+        <!--  class={`px-4 py-2 rounded-full border ${-->
+        <!--  selectedSize === size ? "bg-black text-white border-black" : "border-gray-300 text-gray-700"-->
+        <!--  }`}-->
+        <!--  >-->
+        <!--  {size}-->
+        <!--</button>-->
+        <!--))}-->
+      </div>
+    </div>
+
+    <!--{/* Color Selection */}-->
+    <div>
+      <h3 class="font-semibold mb-2">Color</h3>
+      <div class="flex gap-2">
+        <div *ngFor="let color of product.colors" class="w-8 h-8 rounded-full border border-gray-300"
+          style="background-color: {{color.toLowerCase()}};"></div>
+      </div>
+    </div>
+
+    <!--{/* Quantity */}-->
+    <div>
+      <h3 class="font-semibold mb-2">Quantity</h3>
+      <div class="flex items-center gap-3">
+        <!--<button onClick={()=> setQuantity(Math.max(1, quantity - 1))}-->
+        <!--  class="w-8 h-8 flex items-center justify-center rounded-full border"-->
+        <!--  >-->
+        <!--  --->
+        <!--</button>-->
+        <button class="w-8 h-8 flex items-center justify-center rounded-full border">-</button>
+
+        <span class="w-8 text-center">1</span>
+        <!--<button onClick={()=> setQuantity(quantity + 1)}-->
+        <!--  class="w-8 h-8 flex items-center justify-center rounded-full border"-->
+        <!--  >-->
+        <!--  +-->
+        <!--</button>-->
+        <button class="w-8 h-8 flex items-center justify-center rounded-full border">+</button>
+      </div>
+    </div>
+  </div>
+
+  <!--{/* Add to Cart */-->
+  <div class="fixed bottom-0 left-0 right-0 p-4">
+    <button class="w-full bg-black text-white rounded-lg py-3 font-medium flex items-center justify-center">
+      <ion-icon class="w-5 h-5 mr-2" name="cart-outline" />
+      Add to Cart
+    </button>
+  </div>
+
+</ion-content>

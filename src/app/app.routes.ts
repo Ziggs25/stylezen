@@ -16,12 +16,16 @@ export const routes: Routes = [
   },
   {
     path: 'landing',
-    loadComponent: () => import('./landing/landing.page').then( m => m.LandingPage)
+    loadComponent: () => import('./landing/landing.page').then(m => m.LandingPage)
   },
   {
     path: 'account',
-    loadComponent: () => import('./account/account.page').then( m => m.AccountPage)
+    loadComponent: () => import('./account/account.page').then(m => m.AccountPage)
   },
+  {
+    path: 'product',
+    loadComponent: () => import('./product/product.page').then(m => m.ProductPage)
+  }
 
 
 ];
