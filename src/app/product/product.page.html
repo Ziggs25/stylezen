@@ -47,15 +47,6 @@
       <h3 class="font-semibold mb-2">Size</h3>
       <div class="flex flex-wrap gap-2">
         <div *ngFor="let size of product.sizes" class="px-4 py-2 rounded-full border">{{size}}</div>
-        <!--{product.sizes.map((size) => (-->
-        <!--<button key={size} onClick={()=> setSelectedSize(size)}-->
-        <!--  class={`px-4 py-2 rounded-full border ${-->
-        <!--  selectedSize === size ? "bg-black text-white border-black" : "border-gray-300 text-gray-700"-->
-        <!--  }`}-->
-        <!--  >-->
-        <!--  {size}-->
-        <!--</button>-->
-        <!--))}-->
       </div>
     </div>
 
@@ -72,19 +63,11 @@
     <div>
       <h3 class="font-semibold mb-2">Quantity</h3>
       <div class="flex items-center gap-3">
-        <!--<button onClick={()=> setQuantity(Math.max(1, quantity - 1))}-->
-        <!--  class="w-8 h-8 flex items-center justify-center rounded-full border"-->
-        <!--  >-->
-        <!--  --->
-        <!--</button>-->
+
         <button class="w-8 h-8 flex items-center justify-center rounded-full border">-</button>
 
         <span class="w-8 text-center">1</span>
-        <!--<button onClick={()=> setQuantity(quantity + 1)}-->
-        <!--  class="w-8 h-8 flex items-center justify-center rounded-full border"-->
-        <!--  >-->
-        <!--  +-->
-        <!--</button>-->
+
         <button class="w-8 h-8 flex items-center justify-center rounded-full border">+</button>
       </div>
     </div>
