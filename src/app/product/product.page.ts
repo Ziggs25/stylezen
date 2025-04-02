@@ -5,11 +5,14 @@ import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonIcon, I
 import { addIcons } from "ionicons";
 import { cartOutline, heartOutline } from "ionicons/icons";
 
+const sizes = ["S", "S", "M", "L", "XL"]
+
 interface Product {
   id: number
   title: string
   category: string
   size: string
+  sizes?: string[],
   price: number
   rating: number
   image: string
@@ -22,6 +25,7 @@ let products: Product[] = [
     title: 'Cotton Baggy Pants',
     category: 'UNISEX',
     size: 'S-XL',
+    sizes: sizes,
     price: 790,
     rating: 5.0,
     image: 'assets/images/cotton-baggy-pants.png',
@@ -32,6 +36,7 @@ let products: Product[] = [
     title: 'AIRism Cotton Crew Neck Long Sleeve T-Shirt',
     category: 'UNISEX',
     size: 'S-XL',
+    sizes: sizes,
     price: 990,
     rating: 5.0,
     image: 'assets/images/airism-cotton-tshirt.png',
@@ -42,6 +47,7 @@ let products: Product[] = [
     title: 'Cotton T-Shirt',
     category: 'MENS',
     size: 'S-XL',
+    sizes: sizes,
     price: 690,
     rating: 3.0,
     image: 'assets/images/cotton-tshirt.png',
@@ -52,6 +58,7 @@ let products: Product[] = [
     title: "WOMEN'S SMART ANKLE PANTS 2WAY STRETCH",
     category: 'WOMENS',
     size: 'S-XL',
+    sizes: sizes,
     price: 990,
     rating: 4.0,
     image: 'assets/images/womens-smart-ankle-pants.png',
@@ -62,6 +69,7 @@ let products: Product[] = [
     title: "WOMEN'S U CREW NECK SHORT SLEEVE T-SHIRT",
     category: 'WOMENS',
     size: 'S-XL',
+    sizes: sizes,
     price: 780,
     rating: 5.0,
     image: 'assets/images/WOMENSUCREWNECKSHORTSLEEVET-SHIRT.png',
@@ -72,6 +80,8 @@ let products: Product[] = [
     title: "Rayon Skipper Collar 3/4 Sleeve Blouse",
     category: 'WOMENS',
     size: 'S-L',
+    sizes: ["S", "S", "M", "L", "L"]
+    ,
     price: 990,
     rating: 5.0,
     image: 'assets/images/RayonSkipperCollarSleeveBlouse.png',
