@@ -66,6 +66,8 @@ export class LoginPage implements OnInit {
   }
 
   signInWithEmail() {
+    console.log("run")
+
     // Mark all fields as touched to trigger validation messages
     Object.keys(this.loginForm.controls).forEach(field => {
       const control = this.loginForm.get(field);
